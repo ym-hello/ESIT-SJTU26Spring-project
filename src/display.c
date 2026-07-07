@@ -3,6 +3,7 @@
 #include "seg7.h"
 #include "alarm.h"
 #include "edit.h"
+#include "led.h"
 
 uint8_t g_disp_buf[8];
 uint8_t g_disp_off = 0;
