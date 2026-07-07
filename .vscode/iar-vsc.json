@@ -1,0 +1,11 @@
+{
+  "configs": {
+    "${workspaceFolder}\\driverlib\\driverlib.ewp": "Debug"
+  },
+  "project": {
+    "path": "${workspaceFolder}\\driverlib\\driverlib.ewp"
+  },
+  "workbench": {
+    "path": "F:\\iar\\ewarm-9.60.3"
+  }
+}

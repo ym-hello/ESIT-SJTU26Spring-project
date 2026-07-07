@@ -1,0 +1,18 @@
+# Build outputs
+Objects/
+Listings/
+
+# Keil MDK per-user settings
+*.uvguix.*
+
+# Claude Code personal settings
+.claude/
+
+# VSCode logs and lock files
+.vscode/keil-assistant.log
+.vscode/uv4.log.lock
+
+# Prebuilt driver libraries for other toolchains
+driverlib/ccs/
+driverlib/ewarm/
+driverlib/gcc/

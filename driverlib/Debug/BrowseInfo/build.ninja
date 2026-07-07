@@ -1,0 +1,331 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = F$:\iar\ewarm-9.60.3\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$out
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = F$:\iar\ewarm-9.60.3\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  deps = gcc
+  description = IAR_NEW_TOOL+++INDEXER+++$out
+
+rule MAKEBROWSE
+  command = F$:\iar\ewarm-9.60.3\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out
+
+rule PDBLINK
+  command = F$:\iar\ewarm-9.60.3\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out
+
+
+
+#Build steps
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\adc.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\adc.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\adc.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\adc.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\adc.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\adc.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\adc.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\aes.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\aes.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\aes.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\aes.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\aes.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\aes.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\aes.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\can.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\can.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\can.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\can.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\can.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\can.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\can.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\comp.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\comp.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\comp.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\comp.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\comp.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\comp.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\comp.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\cpu.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\cpu.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\cpu.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\cpu.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\cpu.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\cpu.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\cpu.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\crc.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\crc.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\crc.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\crc.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\crc.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\crc.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\crc.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\des.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\des.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\des.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\des.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\des.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\des.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\des.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\eeprom.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\eeprom.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\eeprom.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\eeprom.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\eeprom.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\eeprom.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\eeprom.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\emac.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\emac.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\emac.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\emac.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\emac.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\emac.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\emac.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\epi.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\epi.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\epi.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\epi.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\epi.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\epi.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\epi.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\flash.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\flash.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\flash.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\flash.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\flash.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\flash.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\flash.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\fpu.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\fpu.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\fpu.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\fpu.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\fpu.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\fpu.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\fpu.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\gpio.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\gpio.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\gpio.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\gpio.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\gpio.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\gpio.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\gpio.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\hibernate.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\hibernate.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\hibernate.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\hibernate.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\hibernate.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\hibernate.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\hibernate.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\i2c.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\i2c.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\i2c.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\i2c.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\i2c.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\i2c.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\i2c.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\interrupt.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\interrupt.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\interrupt.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\interrupt.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\interrupt.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\interrupt.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\interrupt.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\lcd.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\lcd.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\lcd.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\lcd.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\lcd.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\lcd.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\lcd.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\mpu.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\mpu.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\mpu.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\mpu.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\mpu.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\mpu.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\mpu.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\onewire.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\onewire.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\onewire.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\onewire.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\onewire.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\onewire.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\onewire.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\pwm.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\pwm.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\pwm.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\pwm.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\pwm.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\pwm.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\pwm.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\qei.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\qei.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\qei.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\qei.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\qei.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\qei.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\qei.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\shamd5.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\shamd5.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\shamd5.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\shamd5.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\shamd5.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\shamd5.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\shamd5.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\ssi.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\ssi.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\ssi.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\ssi.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\ssi.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\ssi.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\ssi.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sw_crc.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\sw_crc.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sw_crc.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sw_crc.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\sw_crc.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sw_crc.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sw_crc.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysctl.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\sysctl.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysctl.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysctl.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\sysctl.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysctl.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysctl.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysexc.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\sysexc.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysexc.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysexc.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\sysexc.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysexc.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysexc.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\systick.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\systick.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\systick.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\systick.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\systick.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\systick.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\systick.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\timer.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\timer.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\timer.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\timer.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\timer.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\timer.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\timer.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\uart.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\uart.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\uart.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\uart.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\uart.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\uart.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\uart.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\udma.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\udma.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\udma.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\udma.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\udma.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\udma.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\udma.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\usb.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\usb.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\usb.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\usb.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\usb.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\usb.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\usb.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\watchdog.xcl : COMPILER_XCL 
+    flags = G$:\S800\HW\driverlib\watchdog.c -D ewarm --diag_suppress Pa050 -o G$:\S800\HW\driverlib\ewarm\Obj\Source_15812263154798067462.dir --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config F$:\iar\ewarm-9.60.3\arm\inc\c\DLib_Config_Normal.h -I G$:\S800\HW\driverlib\..\ -Ohz --use_c++_inline --predef_macros G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\watchdog.tmp
+    rspfile_name = G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\watchdog.xcl.rsp
+    xclcommand = -source_file G$:\S800\HW\driverlib\watchdog.c -xcl_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\watchdog.xcl -macro_file G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\watchdog.tmp -icc_path F$:\iar\ewarm-9.60.3\arm\bin\iccarm.exe
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\adc.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\adc.xcl | G$:\S800\HW\driverlib\adc.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\adc.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\adc.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\aes.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\aes.xcl | G$:\S800\HW\driverlib\aes.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\aes.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\aes.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\can.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\can.xcl | G$:\S800\HW\driverlib\can.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\can.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\can.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\comp.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\comp.xcl | G$:\S800\HW\driverlib\comp.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\comp.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\comp.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\cpu.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\cpu.xcl | G$:\S800\HW\driverlib\cpu.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\cpu.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\cpu.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\crc.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\crc.xcl | G$:\S800\HW\driverlib\crc.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\crc.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\crc.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\des.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\des.xcl | G$:\S800\HW\driverlib\des.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\des.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\des.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\eeprom.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\eeprom.xcl | G$:\S800\HW\driverlib\eeprom.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\eeprom.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\eeprom.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\emac.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\emac.xcl | G$:\S800\HW\driverlib\emac.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\emac.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\emac.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\epi.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\epi.xcl | G$:\S800\HW\driverlib\epi.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\epi.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\epi.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\flash.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\flash.xcl | G$:\S800\HW\driverlib\flash.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\flash.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\flash.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\fpu.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\fpu.xcl | G$:\S800\HW\driverlib\fpu.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\fpu.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\fpu.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\gpio.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\gpio.xcl | G$:\S800\HW\driverlib\gpio.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\gpio.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\gpio.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\hibernate.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\hibernate.xcl | G$:\S800\HW\driverlib\hibernate.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\hibernate.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\hibernate.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\i2c.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\i2c.xcl | G$:\S800\HW\driverlib\i2c.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\i2c.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\i2c.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\interrupt.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\interrupt.xcl | G$:\S800\HW\driverlib\interrupt.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\interrupt.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\interrupt.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\lcd.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\lcd.xcl | G$:\S800\HW\driverlib\lcd.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\lcd.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\lcd.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\mpu.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\mpu.xcl | G$:\S800\HW\driverlib\mpu.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\mpu.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\mpu.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\onewire.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\onewire.xcl | G$:\S800\HW\driverlib\onewire.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\onewire.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\onewire.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\pwm.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\pwm.xcl | G$:\S800\HW\driverlib\pwm.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\pwm.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\pwm.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\qei.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\qei.xcl | G$:\S800\HW\driverlib\qei.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\qei.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\qei.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\shamd5.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\shamd5.xcl | G$:\S800\HW\driverlib\shamd5.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\shamd5.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\shamd5.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\ssi.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\ssi.xcl | G$:\S800\HW\driverlib\ssi.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\ssi.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\ssi.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sw_crc.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sw_crc.xcl | G$:\S800\HW\driverlib\sw_crc.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sw_crc.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sw_crc.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysctl.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysctl.xcl | G$:\S800\HW\driverlib\sysctl.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysctl.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysctl.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysexc.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysexc.xcl | G$:\S800\HW\driverlib\sysexc.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysexc.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysexc.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\systick.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\systick.xcl | G$:\S800\HW\driverlib\systick.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\systick.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\systick.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\timer.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\timer.xcl | G$:\S800\HW\driverlib\timer.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\timer.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\timer.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\uart.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\uart.xcl | G$:\S800\HW\driverlib\uart.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\uart.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\uart.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\udma.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\udma.xcl | G$:\S800\HW\driverlib\udma.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\udma.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\udma.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\usb.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\usb.xcl | G$:\S800\HW\driverlib\usb.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\usb.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\usb.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\watchdog.pbi : INDEXER G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\watchdog.xcl | G$:\S800\HW\driverlib\watchdog.c
+    flags = -out=G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\watchdog.pbi -f G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\watchdog.xcl
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib.pbw : MAKEBROWSE G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib.pbd
+    flags = G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib.pbd -output G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib.pbw
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part0.pbi : PDBLINK G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\adc.pbi | G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\aes.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\can.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\comp.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\cpu.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\crc.pbi
+    flags = -M G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part0.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\adc.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\aes.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\can.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\comp.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\cpu.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\crc.pbi
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part1.pbi : PDBLINK G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\des.pbi | G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\eeprom.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\emac.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\epi.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\flash.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\fpu.pbi
+    flags = -M G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part1.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\des.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\eeprom.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\emac.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\epi.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\flash.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\fpu.pbi
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part2.pbi : PDBLINK G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\gpio.pbi | G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\hibernate.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\i2c.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\interrupt.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\lcd.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\mpu.pbi
+    flags = -M G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part2.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\gpio.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\hibernate.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\i2c.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\interrupt.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\lcd.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\mpu.pbi
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part3.pbi : PDBLINK G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\onewire.pbi | G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\pwm.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\qei.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\shamd5.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\ssi.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sw_crc.pbi
+    flags = -M G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part3.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\onewire.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\pwm.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\qei.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\shamd5.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\ssi.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sw_crc.pbi
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part4.pbi : PDBLINK G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysctl.pbi | G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysexc.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\systick.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\timer.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\uart.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\udma.pbi
+    flags = -M G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part4.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysctl.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\sysexc.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\systick.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\timer.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\uart.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\udma.pbi
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part5.pbi : PDBLINK G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\usb.pbi | G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\watchdog.pbi
+    flags = -M G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part5.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\usb.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\Source_15812263154798067462.dir\watchdog.pbi
+
+build G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib.pbd : PDBLINK G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part0.pbi | G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part1.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part2.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part3.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part4.pbi $
+ G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part5.pbi
+    flags = -M G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib.pbd G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part0.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part1.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part2.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part3.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part4.pbi G$:\S800\HW\driverlib\Debug\BrowseInfo\driverlib_part5.pbi
+
