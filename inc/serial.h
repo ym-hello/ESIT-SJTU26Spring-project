@@ -1,5 +1,5 @@
-#ifndef UART_H
-#define UART_H
+#ifndef SERIAL_H
+#define SERIAL_H
 #include "board.h"
 
 extern volatile uint8_t g_uart_rx_buf[UART_RX_BUF_SIZE];

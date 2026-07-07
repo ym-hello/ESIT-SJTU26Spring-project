@@ -1,6 +1,6 @@
 // LED state composition for S800 clock
 #include "led.h"
-#include "uart.h"
+#include "serial.h"
 #include "display.h"
 #include "alarm.h"
 #include "edit.h"

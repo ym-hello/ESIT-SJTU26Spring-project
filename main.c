@@ -9,6 +9,9 @@
 #include "seg7.h"
 #include "cmd.h"
 
+// Forward declarations
+void StateMachineUpdate(void);
+
 //=============================================================================
 // Global variables — defined here, declared extern in board.h
 //=============================================================================
@@ -269,7 +272,7 @@ void StateMachineUpdate(void)
         {
             g_func_hold_triggered = 1;
             if (g_edit_mode == EDIT_ALARM) alarm_enabled = 1;
-            g_disp_mode = sv_disp_mode;
+            g_disp_mode = (disp_mode_t)sv_disp_mode;
             g_edit_timeout = 0;
             g_ntp_state = 0;
             UpdateClockDisplay();
@@ -287,7 +290,7 @@ void StateMachineUpdate(void)
                 year = sv_year;  month = sv_month;  day = sv_day;
                 hours = sv_hours;  minutes = sv_minutes;  seconds = sv_seconds;
                 alarm_hours = sv_alarm_h;  alarm_minutes = sv_alarm_m;  alarm_seconds = sv_alarm_s;
-                g_disp_mode = sv_disp_mode;
+                g_disp_mode = (disp_mode_t)sv_disp_mode;
                 g_edit_mode = EDIT_NONE;
                 g_edit_timeout = 0;
             }
@@ -362,7 +365,7 @@ void StateMachineUpdate(void)
             SendEvtKey("SAVE");
             if (g_edit_mode == EDIT_ALARM)
                 alarm_enabled = 1;
-            g_disp_mode = sv_disp_mode;
+            g_disp_mode = (disp_mode_t)sv_disp_mode;
             g_edit_timeout = 0;
             g_ntp_state = 0;
             UpdateClockDisplay();
@@ -375,7 +378,7 @@ void StateMachineUpdate(void)
             year = sv_year;  month = sv_month;  day = sv_day;
             hours = sv_hours;  minutes = sv_minutes;  seconds = sv_seconds;
             alarm_hours = sv_alarm_h;  alarm_minutes = sv_alarm_m;  alarm_seconds = sv_alarm_s;
-            g_disp_mode = sv_disp_mode;
+            g_disp_mode = (disp_mode_t)sv_disp_mode;
             g_edit_mode = EDIT_NONE;
             g_edit_timeout = 0;
             UpdateClockDisplay();

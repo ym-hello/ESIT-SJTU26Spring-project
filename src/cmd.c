@@ -1,6 +1,6 @@
 // Serial command processing for S800 clock
 #include "cmd.h"
-#include "uart.h"
+#include "serial.h"
 #include "seg7.h"
 #include "display.h"
 #include "led.h"

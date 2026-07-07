@@ -1,7 +1,6 @@
 // Alarm state machine and date utilities for S800 clock
 #include "alarm.h"
 #include "led.h"
-#include "uart.h"
 #include "display.h"
 
 uint8_t alarm_hours = 0;

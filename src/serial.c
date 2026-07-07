@@ -1,5 +1,5 @@
 // UART0 communication for S800 clock
-#include "uart.h"
+#include "serial.h"
 
 volatile uint8_t g_uart_rx_buf[UART_RX_BUF_SIZE];
 volatile uint8_t g_uart_rx_head = 0;

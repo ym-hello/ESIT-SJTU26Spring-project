@@ -425,9 +425,9 @@
               <FilePath>.\src\edit.c</FilePath>
             </File>
             <File>
-              <FileName>uart.c</FileName>
+              <FileName>serial.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\src\uart.c</FilePath>
+              <FilePath>.\src\serial.c</FilePath>
             </File>
             <File>
               <FileName>cmd.c</FileName>
