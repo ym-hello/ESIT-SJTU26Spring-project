@@ -384,6 +384,56 @@
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
             </File>
+            <File>
+              <FileName>i2c_drv.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\i2c_drv.c</FilePath>
+            </File>
+            <File>
+              <FileName>init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\init.c</FilePath>
+            </File>
+            <File>
+              <FileName>seg7.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\seg7.c</FilePath>
+            </File>
+            <File>
+              <FileName>buttons.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\buttons.c</FilePath>
+            </File>
+            <File>
+              <FileName>display.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\display.c</FilePath>
+            </File>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>alarm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\alarm.c</FilePath>
+            </File>
+            <File>
+              <FileName>edit.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\edit.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\cmd.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
