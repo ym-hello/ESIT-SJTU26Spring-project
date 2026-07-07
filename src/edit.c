@@ -12,13 +12,6 @@ uint8_t g_func_hold_triggered = 0;
 uint8_t g_func_entered = 0;
 uint32_t g_add_repeat_next = 0;
 
-// Saved originals for cancel-on-timeout
-uint16_t sv_year;
-uint8_t sv_month, sv_day;
-uint8_t sv_hours, sv_minutes, sv_seconds;
-uint8_t sv_alarm_h, sv_alarm_m, sv_alarm_s;
-uint8_t sv_disp_mode;
-
 void EditIncrement(void)
 {
     switch (g_edit_mode)
