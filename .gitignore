@@ -12,6 +12,9 @@ Listings/
 .vscode/keil-assistant.log
 .vscode/uv4.log.lock
 
+# DriverLib build artifacts (browse info, etc.)
+driverlib/Debug/
+
 # Prebuilt driver libraries for other toolchains
 driverlib/ccs/
 driverlib/ewarm/
